@@ -10,8 +10,6 @@
 Console.WriteLine("Ведите число:");
 int number = Convert.ToInt32(Console.ReadLine());
 int size = number.ToString().Length;
-//Console.Write(MakeArray(number, size));
-
 
 if (size == 5)
 {
