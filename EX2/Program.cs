@@ -1,34 +1,25 @@
-﻿// Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, 
-//что третьей цифры нет. Выполнить с помощью числовых операций (целочисленное деление, остаток от деления).
+﻿// Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 
-// 645 -> 5
+// A (3,6,8); B (2,1,-7), -> 15.84
 
-// 78 -> третьей цифры нет
+// A (7,-5, 0); B (1,-1,9) -> 11.53
 
-// 32679 -> 6
+Console.WriteLine("Ведите число xa:");
+int XA = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Ведите число ya:");
+int YA = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Ведите число za:");
+int ZA = Convert.ToInt32(Console.ReadLine());
 
+Console.WriteLine("Ведите число xb:");
+int XB = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Ведите число yb:");
+int YB = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Ведите число zb:");
+int ZB = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Ведите число: ");
-int fist = Convert.ToInt32(Console.ReadLine());
-int count = fist.ToString().Length;
-Console.Write(MakeArray(fist, count));
+double D = Math.Sqrt(Math.Pow((XB-XA), 2) + Math.Pow((YB-YA), 2) + Math.Pow((ZB-ZA), 2));
 
-int MakeArray(int a, int b)
-{
-int result = 0;
-    if (b <= 2)
-    {
-        Console.Write("Нет третьего числа: ");
-    }
-    else
-    {
-        int c = 1;
-        for (int i = b; i > 3; i--)
-        {
-            c = c * 10;
-        }
+double d = Math.Round(D,2);
 
-        result = (a / c) % 10;
-    }
-return result;
-}
+Console.WriteLine($"Расстояние между двумя точками: {d}");
